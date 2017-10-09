@@ -1,12 +1,18 @@
 class CartesianProduct
   include Enumerable
 
+
   def initialize(a,b)
-    #YOUR CODE HERE
+    @cartesian =[]
+    unless a.length ==0||b.length==0
+      a.each do |element_of_a|
+        b.each {|element_of_b| @cartesian << [element_of_a,element_of_b]}
+      end
+    end
   end
 
   def each
-    #YOUR CODE HERE
+    @cartesian.each{|element| yield element}
   end
-
 end
+

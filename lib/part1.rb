@@ -25,37 +25,21 @@
 #instructions specified in the assignment description to hand-in your work.
 
 def palindrome?(str)
-  # YOUR CODE HERE
+  str.downcase.gsub(/\W/,'').reverse == str.downcase.gsub(/\W/,'')
 end
 
 def count_words(str)
-  # YOUR CODE HERE
+  counts = {}
+  str.downcase.scan(/\b[a-z]+/).each do |word|
+    if counts[word].nil? then
+      counts[word] = 1
+    else
+      counts[word] += 1
+    end
+  end
+  counts
 end
 
 
 #the code below this line will test your functions. 
 #You should remove everything below this line prior to submitting your file
-
-
-test_str = "there goes the neighborhood"
-
-if palindrome? test_str
-  puts test_str + " is a palindrome!"
-else
-  puts test_str + " is NOT a palindrome!"
-end
-
-
-test_str = "Madam, I'm Adam"
-
-if palindrome? test_str
-  puts test_str + " is a palindrome!"
-else
-  puts test_str + " is NOT a palindrome!"
-end
-
-
-test_str = "The rent is due on the first day of the month unless the first day of the month falls on a Saturday or Sunday"
-
-word_count = count_words test_str
-puts word_count
