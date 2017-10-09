@@ -26,3 +26,4 @@ class JellyBean < Dessert
     true unless @flavor == "black licorice"
   end
 end
+

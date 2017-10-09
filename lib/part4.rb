@@ -17,3 +17,4 @@ class Class
     }
   end
 end
+
